@@ -6,4 +6,4 @@ const contactSchema = Joi.object({
 
 })
 
-module.exports = contactSchema
+module.exports = contactSchema;
