@@ -21,11 +21,21 @@ const contactSchema = Schema(
   ) 
 
   const joiSchema = Joi.object({
-    name: Joi.string().required(),
-    email: Joi.string().required(),
-    phone: Joi.number().required(),
-    favorite: Joi.bool()
+    name: Joi.string().min(3).max(30).required(),
+    email: Joi.string()
+      .required(),
+    phone: Joi.string()
+      .pattern(/[0-9]/)
+      .required(),
+    favorite: Joi.boolean().valid(false),
   })
+
+  // const joiSchema = Joi.object({
+  //   name: Joi.string().required(),
+  //   email: Joi.string().required(),
+  //   phone: Joi.number().required(),
+  //   favorite: Joi.bool()
+  // })
 
   const favoriteJoiSchema = Joi.object({
     favorite: Joi.bool().required(),
