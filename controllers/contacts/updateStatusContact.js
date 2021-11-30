@@ -10,7 +10,7 @@ const updateStatusContact = async (req, res) => {
         code: 404,
         "message": "Not found"
     })
-    }
+
     res.json({
       status: "success",
       code: 200,
@@ -19,6 +19,6 @@ const updateStatusContact = async (req, res) => {
         result 
       }
     })
-  }
+  }}
 
   module.exports = updateStatusContact
