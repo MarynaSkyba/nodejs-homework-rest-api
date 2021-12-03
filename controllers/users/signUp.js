@@ -5,8 +5,7 @@ const {User} = require('../../models');
 
 
 const signUp = async (req, res) => {
-const {email, password, subscription = "starter"} = req.body;
-console.log(req.body)
+const {email, password} = req.body;
 const user = await User.findOne({email});
 if (user){
     throw new Conflict ("Email in use")
