@@ -1,9 +1,9 @@
 const {User} = require('../../models')
 
 const updateSubscription = async (req, res) => {
-    const {contactId} = req.params;
+    const {_id} = req.user;
     const {subscription} =req.body
-    const result = await User.findByIdAndUpdate(contactId, {subscription}, {new: true});
+    const result = await User.findByIdAndUpdate(_id, {subscription}, {new: true});
     if (!result) {
       res.status(404).json({
         status: "error",
