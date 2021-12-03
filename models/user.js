@@ -40,11 +40,15 @@ const joiSchema = Joi.object({
     token: Joi.string()
   })
 
+  const subscriptionJoiSchema = Joi.object({
+    subscription: Joi.string().valid("starter", "pro", "business").required(),
+  })
 
 const User = model("user", userSchema)
 
 module.exports = {
     User,
     joiSchema,
+    subscriptionJoiSchema
     
 }
