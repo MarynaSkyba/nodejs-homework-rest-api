@@ -9,7 +9,7 @@ const updateSubscription = async (req, res) => {
         status: "error",
         code: 404,
         "message": "Not found"
-    })
+    })}
 
     res.json({
       status: "success",
@@ -19,6 +19,6 @@ const updateSubscription = async (req, res) => {
         result 
       }
     })
-  }}
+  }
 
   module.exports = updateSubscription
