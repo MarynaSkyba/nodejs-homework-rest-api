@@ -1,4 +1,5 @@
 const {Conflict} = require("http-errors");
+const gravatar = require("gravatar")
 // const bcrypt = require('bcryptjs');
 const {User} = require('../../models');
 
@@ -10,7 +11,8 @@ const user = await User.findOne({email});
 if (user){
     throw new Conflict ("Email in use")
 }
-const newUser = new User({email, subscription});
+const avatarURL = gravatar.url(email);
+const newUser = new User({email, avatarURL});
 newUser.setPassword(password);
 newUser.save();
 // const hashPassword = bcrypt.hashSync(password, bcrypt.genSaltSync(10))
@@ -21,7 +23,8 @@ res.status(201).json({
     data: {
       user: {
           email,
-          subscription: newUser.subscription
+          avatarURL,
+        //   subscription: newUser.subscription
       }
     }
 })

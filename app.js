@@ -9,6 +9,7 @@ require('dotenv').config()
 app.use(logger(formatsLogger))
 app.use(cors())
 app.use(express.json())
+app.use(express.static("public"))
 
 const usersRouter = require('./routes/api/users')
 const contactsRouter = require('./routes/api/contacts')
