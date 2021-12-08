@@ -13,5 +13,3 @@ router.get("/logout", auth, ctrlWrapper(ctrl.logOut))
 router.patch("/:contactId", auth, validation(subscriptionJoiSchema), ctrlWrapper(ctrl.updateSubscription))
 
 module.exports = router; 
-
-//
