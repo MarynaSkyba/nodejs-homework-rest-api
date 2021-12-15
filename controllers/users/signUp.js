@@ -24,7 +24,7 @@ res.status(201).json({
       user: {
           email,
           avatarURL,
-        //   subscription: newUser.subscription
+          // subscription
       }
     }
 })
